@@ -73,6 +73,7 @@ wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 32768
 reversible-blocks-db-size-mb = 2048
 disable-subjective-billing = false
+database-map-mode = heap
 http-max-response-time-ms = 300
 http-validate-host = false
 p2p-max-nodes-per-host = 2
@@ -106,3 +107,26 @@ blocks-log-stride = 10000
 max-retained-block-files = 50
 blocks-archive-dir = ""
 ```
+
+## RAM configuration
+
+We have used 
+
+```
+chain-state-db-size-mb = 32768
+database-map-mode = heap
+```
+
+This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space.  If you do not have sufficient ram, remove the `database-map-mode = heap` as a quick fix.  Work to increase resources on your server. 
+
+```
+$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:           31651       23338        1487           6        6824        7865
+Swap:         143050       10493      132556
+```
+
+If you have used a larger value of `chain-state-db-size-mb` previously, then ndoeos will not shrink the size. Start from a snapshot to shrink the size.
+
+
+Note: state can also be put into tempfs to achieve similar perfomance improvements, that is not discussed here.
