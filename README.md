@@ -56,6 +56,12 @@ net-threads = 4
 sync-fetch-span = 2500
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
+
+plugin = eosio::http_plugin
+plugin = eosio::chain_api_plugin
+plugin = eosio::net_api_plugin
+plugin = eosio::producer_api_plugin
+plugin = eosio::db_size_api_plugin
 ```
 
 ## block producer
