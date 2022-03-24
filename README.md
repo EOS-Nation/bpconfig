@@ -90,7 +90,7 @@ cpu-effort-percent = 40
 last-block-cpu-effort-percent = 20
 last-block-time-offset-us = -400000
 max-transaction-time = 35
-producer-name = INSERT NAME OF PRODUCER
+producer-name = INSERT ACCOUNT OF PRODUCER
 signature-provider = INSERT PRODUCER KEY
 actor-blacklist = INSERT MULTIPLE LINES HERE
 
