@@ -23,7 +23,7 @@ p2p-max-nodes-per-host = 10000
 agent-name = INSERT NAME OF BP HERE
 allowed-connection = any
 max-clients = 0
-net-threads = 4
+net-threads = 5
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 
@@ -52,7 +52,7 @@ p2p-max-nodes-per-host = 10000
 agent-name = INSERT NAME OF BP HERE
 allowed-connection = any
 max-clients = 0
-net-threads = 4
+net-threads = 5
 sync-fetch-span = 2500
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
