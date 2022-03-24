@@ -4,7 +4,7 @@ Background information: In February 2020, an architecture was developed to help 
 
 As of March 2022, this is the current configuration of nodeos to support this architecutre. Nodes need to be running nodeos **v2.0.12** (or later 2.0.*) or **v2.1.0**
 
-## block relay(blocks peer node)
+## block relay (blocks peer node)
 
 - have 2 of these nodes for redundancy
 - connect to other block producers or other trusted entities
@@ -23,7 +23,7 @@ p2p-max-nodes-per-host = 10000
 agent-name = INSERT NAME OF BP HERE
 allowed-connection = any
 max-clients = 0
-net-threads = 3
+net-threads = 4
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 
