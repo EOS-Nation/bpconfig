@@ -117,7 +117,7 @@ chain-state-db-size-mb = 32768
 database-map-mode = heap
 ```
 
-This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space.  If you do not have sufficient ram, remove the `database-map-mode = heap` as a quick fix.  Work to increase resources on your server. 
+This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space.  If you do not have sufficient physical server RAM, remove the `database-map-mode = heap` as a quick fix.  You should work to increase resources on your server in the future, as the blockchain is expected to grow with the renewed interest that ENF is generating.
 
 You can see the amount of RAM and SWAP on your server as follows:
 
