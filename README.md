@@ -8,6 +8,7 @@ As of March 2022, this is the current configuration of nodeos to support this ar
 
 - have 2 of these nodes for redundancy
 - connect to other block producers or other trusted entities
+- connect to BP nodes
 
 ```
 wasm-runtime = eos-vm-jit
@@ -38,6 +39,7 @@ plugin = eosio::db_size_api_plugin
 
 - have 2 of these nodes for redundancy
 - connect to other block producers or other trusted entities
+- connect to BP nodes
 
 ```
 wasm-runtime = eos-vm-jit
