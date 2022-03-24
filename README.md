@@ -119,6 +119,8 @@ database-map-mode = heap
 
 This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space.  If you do not have sufficient ram, remove the `database-map-mode = heap` as a quick fix.  Work to increase resources on your server. 
 
+You can see the amount of RAM and SWAP on your server as follows:
+
 ```
 $ free -m
                total        used        free      shared  buff/cache   available
