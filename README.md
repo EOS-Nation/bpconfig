@@ -2,7 +2,7 @@
 
 Background information: In February 2020, an architecture was developed to help EOS Mainnet scale and avoid having failing transactions glog up the network and have empty blocks. The high level overview is here: https://eosnation.io/eos-mainnet-update-new-node-architecture-greatly-improves-eos-reliability/
 
-As of March 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos **v2.0.12** or **2.0.13** or **v2.1.0**
+As of March 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos **v2.0.12** or **v2.0.13** or **v2.1.0**
 
 ## block relay (blocks peer node)
 
