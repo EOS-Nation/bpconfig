@@ -69,7 +69,7 @@ plugin = eosio::db_size_api_plugin
 ## block producer
 
 - have 2 of these nodes for redundancy, one primary and one backup
-- connect only to block relay and transaction relay defined above
+- connect **only** to block relay and transaction relay defined above (4 connections total). **do not connect to any other nodes**
 
 ```
 wasm-runtime = eos-vm-jit
