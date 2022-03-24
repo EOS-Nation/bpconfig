@@ -94,7 +94,7 @@ plugin = eosio::db_size_api_plugin
 plugin = eosio::producer_plugin
 ```
 
-## addtional configuration
+## additional configuration
 
 If running nodeos 2.1, the old blocks can be auto-removed by adding the following:
 
