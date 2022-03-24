@@ -128,7 +128,7 @@ Mem:           31651       23338        1487           6        6824        7865
 Swap:         143050       10493      132556
 ```
 
-If you have used a larger value of `chain-state-db-size-mb` previously, then nodeos will not shrink the size (it will print a warning the log file about it and your node will fail to start because of not enough RAM). Start from a snapshot to shrink the size.
+If you have used a larger value of `chain-state-db-size-mb` previously, then nodeos will not shrink the size (it will print a warning the log file about it and your node will fail to start because of not enough RAM). Start from a snapshot to shrink the size. https://snapshots.eosnation.io/eos-v5/latest
 
 
 Note: state can also be put into tempfs to achieve similar perfomance improvements, that is not discussed here.
