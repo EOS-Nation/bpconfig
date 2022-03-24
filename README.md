@@ -53,7 +53,6 @@ p2p-max-nodes-per-host = 2
 agent-name = INSERT NAME OF BP HERE
 max-clients = 0
 net-threads = 5
-sync-fetch-span = 2500
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 
@@ -80,7 +79,6 @@ p2p-max-nodes-per-host = 2
 agent-name = INSERT NAME OF BP HERE
 max-clients = 0
 net-threads = 2
-sync-fetch-span = 2500
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 cpu-effort-percent = 40
