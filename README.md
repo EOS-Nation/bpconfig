@@ -1,5 +1,4 @@
-# bpconfig
-Block Producer Configuration
+# Block Producer Configuration
 
 Background information: In February 2020, an architecture was developed to help EOS Mainnet scale and avoid having failing transactions glog up the network and have empty blocks. The high level overview is here: https://eosnation.io/eos-mainnet-update-new-node-architecture-greatly-improves-eos-reliability/
 
