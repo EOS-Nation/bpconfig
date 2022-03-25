@@ -84,7 +84,6 @@ verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 cpu-effort-percent = 40
 last-block-cpu-effort-percent = 20
-last-block-time-offset-us = -400000
 max-transaction-time = 35
 producer-name = INSERT ACCOUNT OF PRODUCER
 signature-provider = INSERT PRODUCER KEY
@@ -117,7 +116,7 @@ chain-state-db-size-mb = 32768
 database-map-mode = heap
 ```
 
-This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space.  If you do not have sufficient physical server RAM, remove the `database-map-mode = heap` as a quick fix. 
+This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space (SWAP space required if you don't have more than 32GB RAM). If you do not have sufficient physical server RAM, remove the `database-map-mode = heap` as a quick fix. 
 
 On some cloud providers (like AWS), they limit the disk I/O. If you load all the blockchain state in memory, then you avoid any problems with this  I/O limiting. You should work to increase resources on your server in the future, as the blockchain is expected to grow with the renewed interest that ENF is generating.
 
