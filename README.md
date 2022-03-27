@@ -164,3 +164,5 @@ plugin = eosio::db_size_api_plugin
 ```
 
 You will notice that OC is not enabled, and `p2p-accept-transactions = false`.  This avoids processing lots of transactions and the RPC requests for transactions are billed at the same value that will be used on the BP node (assuming hardware CPU is the same). `enable-account-queries = true` can be set to enable lookup of account information. This is important on public API nodes. The Producer API and Chain API should not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
+
+Connect the API node to both the "block relay" and "transaction sentry" nodes.
