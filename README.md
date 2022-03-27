@@ -133,3 +133,34 @@ If you have used a larger value of `chain-state-db-size-mb` previously, then nod
 
 
 Note: state can also be put into tempfs to achieve similar perfomance improvements, that is not discussed here.
+
+## Extra node: API Node
+
+```
+wasm-runtime = eos-vm-jit
+chain-state-db-size-mb = 32768
+reversible-blocks-db-size-mb = 2048
+http-max-response-time-ms = 300
+read-mode = head
+database-map-mode = heap
+p2p-accept-transactions = false
+disable-api-persisted-trx = true
+http-validate-host = false
+p2p-max-nodes-per-host = 2
+agent-name = INSERT NAME OF BP HERE
+max-clients = 0
+net-threads = 5
+http-threads = 8
+verbose-http-errors = true
+abi-serializer-max-time-ms = 2000
+http-server-address = 0.0.0.0:8888
+enable-account-queries = true
+
+plugin = eosio::http_plugin
+plugin = eosio::chain_api_plugin
+plugin = eosio::net_api_plugin
+plugin = eosio::producer_api_plugin
+plugin = eosio::db_size_api_plugin
+```
+
+You will notice that OC is not enabled, and `p2p-accept-transactions = false`.  This avoids processing lots of transactions and the RPC requests for transactions are billed at the same value that will be used on the BP node (assuming hardware CPU is the same). `enable-account-queries = true` can be set to enable lookup of account information. This is important on public API nodes. The Producer API and Chain API should not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
