@@ -1,8 +1,10 @@
 # Block Producer Configuration
 
-Background information: In February 2020, an architecture was developed to help EOS Mainnet scale and avoid having failing transactions glog up the network and have empty blocks. The high level overview is here: https://eosnation.io/eos-mainnet-update-new-node-architecture-greatly-improves-eos-reliability/
+Background information: In February 2020, an architecture was developed to help EOS Mainnet scale and avoid having failing transactions clog up the network and have empty blocks. The high level overview is here: https://eosnation.io/eos-mainnet-update-new-node-architecture-greatly-improves-eos-reliability/
 
-As of March 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos **v2.0.12** or **v2.0.13** or **v2.1.0**
+As of August 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos **v2.0.12** or **v2.0.13** or **v3.1.0**
+
+The Producer API and Chain API must not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
 
 ## block relay (blocks peer node)
 
@@ -45,7 +47,8 @@ wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 32768
 reversible-blocks-db-size-mb = 2048
 http-max-response-time-ms = 300
-disable-subjective-billing = false
+disable_subjective_api_billing = false
+disable_subjective_p2p_billing = false
 read-mode = head
 database-map-mode = heap
 http-validate-host = false
@@ -72,7 +75,8 @@ plugin = eosio::db_size_api_plugin
 wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 32768
 reversible-blocks-db-size-mb = 2048
-disable-subjective-billing = false
+disable_subjective_api_billing = false
+disable_subjective_p2p_billing = false
 database-map-mode = heap
 http-max-response-time-ms = 300
 http-validate-host = false
@@ -166,6 +170,6 @@ plugin = eosio::db_size_api_plugin
 
 You will notice that OC is not enabled, and `p2p-accept-transactions = false`.  This avoids processing lots of transactions and the RPC requests for transactions are billed at the same value that will be used on the BP node (assuming hardware CPU is the same). `enable-account-queries = true` can be set to enable lookup of account information. This is important on public API nodes. 
 
-The Producer API and Chain API must not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
+As a reminder, the Producer API and Chain API must not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
 
 Connect the API node to both the "block relay" and "transaction sentry" nodes.
