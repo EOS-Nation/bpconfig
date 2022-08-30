@@ -173,3 +173,6 @@ You will notice that OC is not enabled, and `p2p-accept-transactions = false`.  
 As a reminder, the Producer API and Chain API must not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
 
 Connect the API node to both the "block relay" and "transaction sentry" nodes.
+
+![Nodes-Graphic](https://user-images.githubusercontent.com/36178664/187374756-67edb1b5-7836-4056-99fe-53c8138a6649.png)
+
