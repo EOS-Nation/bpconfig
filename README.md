@@ -27,6 +27,7 @@ max-clients = 0
 net-threads = 5
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
+block-log-retain-blocks = 172800
 
 plugin = eosio::http_plugin
 plugin = eosio::chain_api_plugin
@@ -56,6 +57,7 @@ max-clients = 0
 net-threads = 5
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
+block-log-retain-blocks = 172800
 
 plugin = eosio::http_plugin
 plugin = eosio::chain_api_plugin
@@ -83,10 +85,12 @@ max-clients = 0
 net-threads = 2
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
+block-log-retain-blocks = 172800
+
 cpu-effort-percent = 40
 last-block-cpu-effort-percent = 20
 max-transaction-time = 35
-subjective-cpu-leeway-us = 36000 
+subjective-cpu-leeway-us = 36000
 producer-name = INSERT ACCOUNT OF PRODUCER
 signature-provider = INSERT PRODUCER KEY
 actor-blacklist = INSERT MULTIPLE LINES HERE
@@ -97,16 +101,6 @@ plugin = eosio::net_api_plugin
 plugin = eosio::producer_api_plugin
 plugin = eosio::db_size_api_plugin
 plugin = eosio::producer_plugin
-```
-
-## additional configuration
-
-If running nodeos 2.1, the old blocks can be auto-removed by adding the following:
-
-```
-blocks-log-stride = 10000
-max-retained-block-files = 50
-blocks-archive-dir = ""
 ```
 
 ## RAM configuration
@@ -171,4 +165,3 @@ As a reminder, the Producer API and Chain API must not be exposed to public. Use
 Connect the API node to both the "block relay" and "transaction sentry" nodes.
 
 ![Nodes-Graphic](https://user-images.githubusercontent.com/36178664/187374756-67edb1b5-7836-4056-99fe-53c8138a6649.png)
-
