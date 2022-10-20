@@ -2,7 +2,7 @@
 
 Background information: In February 2020, an architecture was developed to help EOS Mainnet scale and avoid having failing transactions clog up the network and have empty blocks. The high level overview is here: https://eosnation.io/eos-mainnet-update-new-node-architecture-greatly-improves-eos-reliability/
 
-As of August 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos **v2.0.12** or **v2.0.13** or **v3.1.0**
+As of October 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos leap **v3.1.0** or later.
 
 The Producer API and Chain API must not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
 
@@ -16,7 +16,6 @@ The Producer API and Chain API must not be exposed to public. Use a reverse prox
 wasm-runtime = eos-vm-jit
 eos-vm-oc-enable = true
 chain-state-db-size-mb = 32768
-reversible-blocks-db-size-mb = 2048
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = heap
@@ -45,7 +44,6 @@ plugin = eosio::db_size_api_plugin
 ```
 wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 32768
-reversible-blocks-db-size-mb = 2048
 http-max-response-time-ms = 300
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
@@ -74,7 +72,6 @@ plugin = eosio::db_size_api_plugin
 ```
 wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 32768
-reversible-blocks-db-size-mb = 2048
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
 database-map-mode = heap
@@ -144,7 +141,6 @@ Note: state can also be put into tempfs to achieve similar perfomance improvemen
 ```
 wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 32768
-reversible-blocks-db-size-mb = 2048
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = heap
