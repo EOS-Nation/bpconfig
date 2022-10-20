@@ -15,7 +15,7 @@ The Producer API and Chain API must not be exposed to public. Use a reverse prox
 ```
 wasm-runtime = eos-vm-jit
 eos-vm-oc-enable = true
-chain-state-db-size-mb = 32768
+chain-state-db-size-mb = 36864
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = heap
@@ -44,7 +44,7 @@ plugin = eosio::db_size_api_plugin
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 32768
+chain-state-db-size-mb = 36864
 http-max-response-time-ms = 300
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
@@ -73,7 +73,7 @@ plugin = eosio::db_size_api_plugin
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 32768
+chain-state-db-size-mb = 36864
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
 database-map-mode = heap
@@ -108,7 +108,7 @@ plugin = eosio::producer_plugin
 We have used 
 
 ```
-chain-state-db-size-mb = 32768
+chain-state-db-size-mb = 36864
 database-map-mode = heap
 ```
 
@@ -134,7 +134,7 @@ Note: state can also be put into tempfs to achieve similar perfomance improvemen
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 32768
+chain-state-db-size-mb = 36864
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = heap
