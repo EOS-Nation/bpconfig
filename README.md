@@ -18,7 +18,7 @@ eos-vm-oc-enable = true
 chain-state-db-size-mb = 36864
 http-max-response-time-ms = 300
 read-mode = head
-database-map-mode = heap
+database-map-mode = mapped_private
 p2p-accept-transactions = false
 http-validate-host = false
 p2p-max-nodes-per-host = 2
@@ -50,7 +50,7 @@ disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
 subjective-account-decay-time-minutes = 60
 read-mode = head
-database-map-mode = heap
+database-map-mode = mapped_private
 http-validate-host = false
 p2p-max-nodes-per-host = 2
 agent-name = INSERT NAME OF BP HERE
@@ -78,7 +78,7 @@ chain-state-db-size-mb = 36864
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
 subjective-account-decay-time-minutes = 60
-database-map-mode = heap
+database-map-mode = mapped_private
 http-max-response-time-ms = 300
 http-validate-host = false
 p2p-max-nodes-per-host = 2
@@ -111,10 +111,10 @@ We have used
 
 ```
 chain-state-db-size-mb = 36864
-database-map-mode = heap
+database-map-mode = mapped_private
 ```
 
-This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space (SWAP space required if you don't have more than 32GB RAM). If you do not have sufficient physical server RAM, remove the `database-map-mode = heap` as a quick fix. 
+This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 32GB of SWAP space (SWAP space required if you don't have more than 32GB RAM). If you do not have sufficient physical server RAM, remove the `database-map-mode = mapped_private` as a quick fix. 
 
 On some cloud providers (like AWS), they limit the disk I/O. If you load all the blockchain state in memory, then you avoid any problems with this  I/O limiting. You should work to increase resources on your server in the future, as the blockchain is expected to grow with the renewed interest that ENF is generating.
 
@@ -139,7 +139,7 @@ wasm-runtime = eos-vm-jit
 chain-state-db-size-mb = 36864
 http-max-response-time-ms = 300
 read-mode = head
-database-map-mode = heap
+database-map-mode = mapped_private
 p2p-accept-transactions = false
 disable-api-persisted-trx = true
 http-validate-host = false
