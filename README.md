@@ -89,8 +89,6 @@ verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 block-log-retain-blocks = 172800
 
-cpu-effort-percent = 40
-last-block-cpu-effort-percent = 20
 max-transaction-time = 35
 subjective-cpu-leeway-us = 36000
 producer-name = INSERT ACCOUNT OF PRODUCER
