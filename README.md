@@ -2,7 +2,9 @@
 
 Background information: In February 2020, an architecture was developed to help EOS Mainnet scale and avoid having failing transactions clog up the network and have empty blocks. The high level overview is here: https://eosnation.io/eos-mainnet-update-new-node-architecture-greatly-improves-eos-reliability/
 
-As of October 2022, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos leap **v3.1.0** or later.
+As of November 2023, we have removed the block relay nodes as nodeos leap 4.0.0 an up now prioritizes block propogation over transactions.
+
+As of February 2024, this is the current configuration of nodeos to support this architecture. Nodes need to be running nodeos leap **v5.0.0** or later.
 
 The Producer API and Chain API must not be exposed to public. Use a reverse proxy to expose the /v1/chain/... APIs, but keep the others private.
 
@@ -74,7 +76,7 @@ plugin = eosio::db_size_api_plugin
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 65536
+chain-state-db-size-mb = 94208
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
 subjective-account-decay-time-minutes = 60
@@ -87,7 +89,7 @@ max-clients = 0
 net-threads = 2
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
-block-log-retain-blocks = 172800
+block-log-retain-blocks = 0
 
 max-transaction-time = 35
 subjective-cpu-leeway-us = 36000
@@ -108,7 +110,7 @@ plugin = eosio::producer_plugin
 We have used 
 
 ```
-chain-state-db-size-mb = 65536
+chain-state-db-size-mb = 94208
 database-map-mode = mapped_private
 ```
 
@@ -134,7 +136,7 @@ Note: state can also be put into tempfs to achieve similar perfomance improvemen
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 65536
+chain-state-db-size-mb = 94208
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = mapped_private
