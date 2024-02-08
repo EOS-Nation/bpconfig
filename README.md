@@ -17,7 +17,7 @@ The Producer API and Chain API must not be exposed to public. Use a reverse prox
 ```
 wasm-runtime = eos-vm-jit
 eos-vm-oc-enable = true
-chain-state-db-size-mb = 65536
+chain-state-db-size-mb = 94208
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = mapped_private
@@ -46,7 +46,7 @@ plugin = eosio::db_size_api_plugin
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 65536
+chain-state-db-size-mb = 94208
 http-max-response-time-ms = 300
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
