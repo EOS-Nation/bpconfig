@@ -114,7 +114,7 @@ chain-state-db-size-mb = 94208
 database-map-mode = mapped_private
 ```
 
-This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 64GB of SWAP space (SWAP space required if you don't have more than 64GB RAM). If you do not have sufficient physical server RAM, remove the `database-map-mode = mapped_private` as a quick fix. 
+This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 96GB of SWAP space (SWAP space required if you don't have more than 96GB RAM).
 
 On some cloud providers (like AWS), they limit the disk I/O. If you load all the blockchain state in memory, then you avoid any problems with this  I/O limiting. You should work to increase resources on your server in the future, as the blockchain is expected to grow with the renewed interest that ENF is generating.
 
