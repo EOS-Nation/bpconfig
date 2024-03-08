@@ -17,7 +17,7 @@ The Producer API and Chain API must not be exposed to public. Use a reverse prox
 ```
 wasm-runtime = eos-vm-jit
 eos-vm-oc-enable = true
-chain-state-db-size-mb = 94208
+chain-state-db-size-mb = 131072
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = mapped_private
@@ -46,7 +46,7 @@ plugin = eosio::db_size_api_plugin
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 94208
+chain-state-db-size-mb = 131072
 http-max-response-time-ms = 300
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
@@ -76,7 +76,7 @@ plugin = eosio::db_size_api_plugin
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 94208
+chain-state-db-size-mb = 131072
 disable-subjective-api-billing = false
 disable-subjective-p2p-billing = false
 subjective-account-decay-time-minutes = 60
@@ -110,11 +110,11 @@ plugin = eosio::producer_plugin
 We have used 
 
 ```
-chain-state-db-size-mb = 94208
+chain-state-db-size-mb = 131072
 database-map-mode = mapped_private
 ```
 
-This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 96GB of SWAP space (SWAP space required if you don't have more than 96GB RAM).
+This loads all the blockchain data into RAM and makes computing transactions fast. However, this requires at least 32GB physical RAM and 96GB of SWAP space (SWAP space required if you don't have more than 128GB RAM).
 
 On some cloud providers (like AWS), they limit the disk I/O. If you load all the blockchain state in memory, then you avoid any problems with this  I/O limiting. You should work to increase resources on your server in the future, as the blockchain is expected to grow with the renewed interest that ENF is generating.
 
@@ -136,7 +136,7 @@ Note: state can also be put into tempfs to achieve similar perfomance improvemen
 
 ```
 wasm-runtime = eos-vm-jit
-chain-state-db-size-mb = 94208
+chain-state-db-size-mb = 131072
 http-max-response-time-ms = 300
 read-mode = head
 database-map-mode = mapped_private
