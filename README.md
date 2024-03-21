@@ -91,7 +91,6 @@ verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 block-log-retain-blocks = 0
 
-max-transaction-time = 35
 subjective-cpu-leeway-us = 36000
 producer-name = INSERT ACCOUNT OF PRODUCER
 signature-provider = INSERT PRODUCER KEY
