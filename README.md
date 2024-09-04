@@ -89,7 +89,6 @@ agent-name = INSERT NAME OF BP HERE
 max-clients = 0
 net-threads = 4
 read-only-threads = 0
-producer-threads = 4
 verbose-http-errors = true
 abi-serializer-max-time-ms = 2000
 block-log-retain-blocks = 0
